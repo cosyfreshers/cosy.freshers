@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Freshers Proposal</title>
+  <style>
+    body {
+      background: #ffe6f0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: #d6336c;
+    }
+    .btn {
+      padding: 12px 24px;
+      font-size: 1.2rem;
+      margin: 10px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .yes {
+      background-color: #28a745;
+      color: white;
+    }
+    .no {
+      background-color: #dc3545;
+      color: white;
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+  <h1>Ria, will you come with me for Freshers?</h1>
+  <button class="btn yes" onclick="sayYes()">Yes</button>
+  <button class="btn no" id="noBtn">No</button>
+
+  <script>
+    const noBtn = document.getElementById('noBtn');
+
+    function moveButton() {
+      const x = Math.floor(Math.random() * (window.innerWidth - 100));
+      const y = Math.floor(Math.random() * (window.innerHeight - 50));
+      noBtn.style.left = x + 'px';
+      noBtn.style.top = y + 'px';
+    }
+
+    noBtn.addEventListener('mouseover', moveButton);
+    noBtn.addEventListener('click', moveButton);
+
+    function sayYes() {
+      document.body.innerHTML = "<h1 style='color:#28a745;'>LFG! Can't wait to go with a <del> 3/10</del> 1000/10🥰🥰</h1>";
+    }
+  </script>
+</body>
+</html>
